@@ -37,8 +37,8 @@ type CreateUserRequest = {
   email: string;
 };
 export const useCreateMyUser = () => {
+  console.log("abc");
   const { getAccessTokenSilently } = useAuth0();
-
   const createMyUserRequest = async (user: CreateUserRequest) => {
     const accessToken = await getAccessTokenSilently();
     const response = await fetch(`${API_BASE_URL}/api/my/user`, {
@@ -49,10 +49,10 @@ export const useCreateMyUser = () => {
       },
       body: JSON.stringify(user),
     });
-    console.log(response);
     if (!response.ok) {
       throw new Error("Failed to Create a User");
     }
+    return response.json();
   };
   const {
     mutateAsync: createUser,
