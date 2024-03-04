@@ -15,7 +15,7 @@ const formSchema = z.object({
 export type SearchForm = z.infer<typeof formSchema>;
 
 type Props = {
-  searchQuery: string;
+  searchQuery?: string;
   onSubmit: (formData: SearchForm) => void;
   placeholder: string;
   onReset?: () => void;
