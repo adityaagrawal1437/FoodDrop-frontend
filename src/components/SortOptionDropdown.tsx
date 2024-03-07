@@ -37,10 +37,10 @@ const SortOptionDropdown = ({ onChange, sortOption }: Props) => {
           Sort by:{selectedSortLabel}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
+      <DropdownMenuContent className=" bg-white rounded-lg p-1">
         {SORT_OPTIONS.map((option) => (
           <DropdownMenuItem
-            className="cursor-pointer"
+            className="cursor-pointer  hover:bg-none"
             onClick={() => onChange(option.value)}
           >
             {option.label}
