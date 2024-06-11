@@ -2,7 +2,7 @@ services:
   - type: web
     name: fooddrop-frontend
     env: static
-    static_publish_path: dist 
+    static_publish_path: build 
     routes:
       - type: rewrite
         source: /*
